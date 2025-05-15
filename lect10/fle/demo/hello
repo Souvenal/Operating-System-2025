@@ -1,0 +1,7 @@
+#!./exec
+
+{
+    "type": ".exe",
+    "symbols": {},
+    ".load": []
+}
