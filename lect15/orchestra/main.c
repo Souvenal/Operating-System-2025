@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int conductor_beat = 0;
 
 void wait_for_beat(int current_beat);

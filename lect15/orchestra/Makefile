@@ -1,8 +1,10 @@
-CFLAGS := -O2 -I$(TLIB_PATH)
+TLIB_PATH := ../../thread-lib
+
+CFLAGS := -O2 -I$(TLIB_PATH) -Wno-unused-result
 
 all: orchestra orchestra-cv
 
-C1.wav:
+notes/C1.wav:
 	python3 gen-notes.py
 
 orchestra: orchestra.c main.c notes/C1.wav
@@ -11,7 +13,6 @@ orchestra: orchestra.c main.c notes/C1.wav
 orchestra-cv: orchestra-cv.c main.c notes/C1.wav
 	gcc $(CFLAGS) -o $@ $<
 
-
-
 clean:
-	rm -f *.wav orchestra orchestra-cv
+	rm -rf notes/ orchestra orchestra-cv
+
